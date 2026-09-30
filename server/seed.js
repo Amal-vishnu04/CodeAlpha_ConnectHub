@@ -1,11 +1,11 @@
-require('dotenv').config();
+require('dotenv').config({ path: require('path').join(__dirname, '..', '.env') });
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const User = require('./models/User');
 const Post = require('./models/Post');
 
 (async () => {
-  await mongoose.connect(process.env.MONGO_URI);
+  await mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/connecthub');
   const hash = await bcrypt.hash('password123', 10);
   const people = [
     { name: 'Amal Vishnu', username: 'amal', email: 'amal@example.com', bio: 'Full stack intern. Building ConnectHub.' },

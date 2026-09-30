@@ -1,7 +1,15 @@
-require('dotenv').config();
+require('dotenv').config({ path: require('path').join(__dirname, '..', '.env') });
 const express = require('express');
 const path = require('path');
 const connectDB = require('./config/db');
+
+if (!process.env.JWT_SECRET) {
+  if (process.env.NODE_ENV === 'production') {
+    throw new Error('JWT_SECRET must be set before starting ConnectHub in production.');
+  }
+  process.env.JWT_SECRET = require('crypto').randomBytes(32).toString('hex');
+  console.warn('JWT_SECRET is not set; using a temporary development secret for this run.');
+}
 
 const app = express();
 app.use(express.json({ limit: '6mb' })); // images are sent as base64 data URLs
