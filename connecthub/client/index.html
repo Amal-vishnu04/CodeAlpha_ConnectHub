@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Feed · ConnectHub</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header id="navbar"></header>
+<main class="container">
+  <aside class="sidebar">
+    <div class="card"><a id="miniLink" class="row"><span id="miniAvatar"></span><div><b id="miniName"></b><div class="muted" id="miniUser"></div></div></a>
+      <div class="stats"><div><b id="miniFollowers">0</b><span>Followers</span></div><div><b id="miniFollowing">0</b><span>Following</span></div></div></div>
+    <div class="card"><b>Community</b>
+      <div class="stats"><div><b id="statUsers">0</b><span>Members</span></div><div><b id="statPosts">0</b><span>Posts</span></div></div></div>
+  </aside>
+  <section class="feed-col">
+    <div class="card welcome"><h1>Welcome back, <span id="welcomeName"></span>!</h1><p>Share your thoughts, connect with people, grow your circle.</p></div>
+    <form id="composer" class="card">
+      <textarea id="postText" rows="3" maxlength="1000" aria-label="Post content"></textarea>
+      <div id="preview" class="preview"></div>
+      <div class="composer-actions">
+        <select id="feelingSel" class="chip" aria-label="Feeling"><option value="">😊 Feeling</option><option>😊 Happy</option><option>🔥 Excited</option><option>😎 Cool</option><option>🙏 Grateful</option><option>😴 Tired</option><option>🤔 Thoughtful</option></select>
+        <label class="chip" style="cursor:pointer">📷 Photo<input id="photoInput" type="file" accept="image/*" hidden></label>
+        <button id="postBtn" class="btn" style="margin-left:auto">Post</button>
+      </div>
+    </form>
+    <div id="feed"></div>
+  </section>
+</main>
+<script src="js/main.js"></script><script src="js/posts.js"></script><script src="js/feed.js"></script>
+</body></html>

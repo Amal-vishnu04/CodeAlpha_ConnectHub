@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login · ConnectHub</title><link rel="stylesheet" href="css/style.css"></head>
+<body class="auth-page"><form id="loginForm" class="card auth-card">
+  <h1>🔗 ConnectHub</h1><p class="muted">Share your thoughts, connect with people, grow your circle.</p>
+  <div id="formError" class="hidden" style="color:var(--danger)" role="alert"></div>
+  <label>Email or username<input class="input" name="identifier" required autocomplete="username"></label>
+  <label>Password<input class="input" type="password" name="password" required autocomplete="current-password"></label>
+  <button class="btn">Log in</button>
+  <p class="muted">New here? <a href="register.html" style="color:var(--primary)">Create an account</a></p>
+</form>
+<script src="js/main.js"></script><script src="js/auth.js"></script></body></html>
